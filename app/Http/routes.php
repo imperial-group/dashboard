@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::auth();
+
+Route::get('/home', ['middleware'=>'auth', 'uses'=>'HomeController@index']);
